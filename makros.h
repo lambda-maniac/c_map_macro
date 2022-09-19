@@ -46,7 +46,7 @@
 
 // Get church-raw value -- normal value.
 #define get_c_rvalue c_false // As a church binding is just a set of two, 
-                             // this functions is literally church-true.
+                             // this functions is literally church-false.
 
 // ============== //
 // The Map macro. // Maps items with a macro.
@@ -105,7 +105,23 @@
 #define sep_comma     ,
 #define sep_semicolon ;
 
-// TODO:
+// Use this for now.
+#define $    as_c_true
+#define map  impl_map
+#define lmap impl_lmap
+
+// TODO: HOW THE FUCK ? THERE'S NO WAY TO BOOTSTRAP IT, IS THERE?
+
 // ================================================== //
-// The Map macro (No need to call as_c_true on args). //
+// The Map macro (No need to call as_c_true on args). // 
 // ================================================== //
+// #define tct_end_flag c_false
+
+// #define n1_to_true(element, args...) \
+//     as_c_true(element) sep_comma n0_to_true omit_call (args)
+
+// #define n0_to_true(element, args...) \
+//     as_c_true(element) sep_comma n1_to_true omit_call (args)
+
+// #define to_true(args...) \
+//     n0_to_true(args, tct_end_flag)
